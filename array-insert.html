@@ -29,7 +29,7 @@
       function insertElement() {
         let pos = document.getElementById("position").value;
         let newEl = document.getElementById("newEL").value;
-        newEl = parseInt(newEl)
+        newEl = parseInt(newEl);
         for (let i = data.length - 1; i >= 0; i--) {
           if (
             pos < data.length &&
@@ -39,11 +39,7 @@
             if (i >= pos) {
               data[i + 1] = data[i];
               if (i == pos) {
-                if (!isNaN === newEl) {
-                  data[i] = newEl;
-                } else {
-                  alert("Please enter a valid number");
-                }
+                data[i] = newEl;
               }
             }
           } else {
