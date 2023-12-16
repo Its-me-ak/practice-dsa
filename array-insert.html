@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array Insert</title>
-</head>
-<body>
+  </head>
+  <body>
+    <input type="text" id="position" placeholder="Enter position" />
+    <input type="text" id="newEL" placeholder="New element" />
+    <button onclick="insertElement();">Insert Element</button>
     <script>
-        let data = [60,13,80,24,98];
-        console.log(data);
-        let newEl = 50;
-        let position = 2;
-        for(let i = data.length-1; i >= 0; i--){
-            if(i >= position){
-                data[i+1] = data[i];
-                if(i==position){
-                    data[i]=newEl;
-                }
-            }
-        }
+      //   let data = [60, 13, 80, 24, 98];
+      //   console.log(data);
+      //   let newEl = 50;
+      //   let position = 2;
+      //   for (let i = data.length - 1; i >= 0; i--) {
+      //     if (i >= position) {
+      //       data[i + 1] = data[i];
+      //       if (i == position) {
+      //         data[i] = newEl;
+      //       }
+      //     }
+      //   }
+      //   console.log(data);
 
+      let data = [60, 13, 80, 24, 98];
+      console.log(data);
+      function insertElement() {
+        let pos = document.getElementById("position").value;
+        let newEl = document.getElementById("newEL").value;
+        newEl = parseInt(newEl)
+        for (let i = data.length - 1; i >= 0; i--) {
+          if (
+            pos < data.length &&
+            pos >= 0 &&
+            typeof parseInt(pos) === "number"
+          ) {
+            if (i >= pos) {
+              data[i + 1] = data[i];
+              if (i == pos) {
+                if (!isNaN === newEl) {
+                  data[i] = newEl;
+                } else {
+                  alert("Please enter a valid number");
+                }
+              }
+            }
+          } else {
+            alert("Entered position is out of range OR Invalid number");
+            break;
+          }
+        }
         console.log(data);
+      }
     </script>
-</body>
+  </body>
 </html>
