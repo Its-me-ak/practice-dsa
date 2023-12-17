@@ -38,8 +38,10 @@
           ) {
             if (i >= pos) {
               data[i + 1] = data[i];
-              if (i == pos) {
+              if (i == pos && typeof parseInt(pos) === "number") {
                 data[i] = newEl;
+              }else{
+                alert("Invalid number")
               }
             }
           } else {
